@@ -1,0 +1,10 @@
+{
+  "name": "extjs-skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
+  "license": "ISC",
+  "scripts": {
+    "start": "cd skeleton1/skeletonapp && sencha app watch"
+  }
+}

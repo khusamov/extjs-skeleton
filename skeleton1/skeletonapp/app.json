@@ -1,0 +1,129 @@
+{
+    "name": "SkeletonApp",
+    "namespace": "SkeletonApp",
+    "version": "1.0.0",
+    "theme": "theme-triton",
+	"locale": "ru",
+    "requires": [
+		"locale",
+        "font-awesome"
+    ],
+
+
+
+    "indexHtmlPath": "index.html",
+    "framework": "ext",
+    "toolkit": "classic",
+    "overrides": [
+        "overrides"
+    ],
+    "resources": [
+        {
+            "path": "resources",
+            "output": "shared"
+        }
+    ],
+    "classpath": [
+        "app"
+    ],
+    "js": [
+        {
+            "path": "${framework.dir}/build/ext-all-debug.js"
+        },
+        {
+            "path": "app.js",
+            "bundle": true
+        }
+    ],
+     "loader": {
+         "cache": false,
+         "cacheParam": "_dc"
+     },
+    "output": {
+        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+        "appCache": {
+            "enable": false
+        }
+    },
+	 
+    "testing": {
+    },
+    "development": {
+        "watch": {
+            "delay": 250
+        }
+    },
+
+    "fashion": {
+        "missingParameters": "error",
+        "inliner": {
+            "enable": false
+        }
+    },
+    "sass": {
+        "namespace": "SkeletonApp",
+        "generated": {
+            "var": "sass/save.scss",
+            "src": "sass/save"
+        },
+        "etc": [
+            "sass/etc/all.scss"
+        ],
+        "var": [
+            "sass/var/all.scss",
+            "sass/var"
+        ],
+        "src": [
+            "sass/src"
+        ]
+    },
+    "css": [
+        {
+            "path": "${build.out.css.path}",
+            "bundle": true,
+            "exclude": ["fashion"]
+        }
+    ],
+    "production": {
+        "output": {
+            "appCache": {
+                "enable": true,
+                "path": "cache.appcache"
+            }
+        },
+        "loader": {
+            "cache": "${build.timestamp}"
+        },
+        "cache": {
+            "enable": true
+        },
+        "compressor": {
+            "type": "yui"
+        }
+    },
+    "bootstrap": {
+        "base": "${app.dir}",
+
+        "microloader": "bootstrap.js",
+        "css": "bootstrap.css"
+    },
+    "cache": {
+        "enable": false,
+        "deltas": true
+    },
+    "appCache": {
+        "cache": [
+            "index.html"
+        ],
+        "network": [
+            "*"
+        ],
+        "fallback": []
+    },
+    "archivePath": "archive",
+    "slicer": null,
+    "ignore": [
+        "(^|/)CVS(/?$|/.*?$)"
+    ],
+    "id": "5d789f6b-405e-4c72-ab7c-d132a6e9c769"
+}
